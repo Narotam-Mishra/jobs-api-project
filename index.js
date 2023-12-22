@@ -1,4 +1,6 @@
 require('dotenv').config();
+require('express-async-errors');
+
 const express = require('express');
 const server = express();
 
@@ -7,6 +9,8 @@ const DBConnection = require('./db/connectDB');
 
 // auth related router
 const authRouter = require('./routes/authRoute');
+
+// job related router
 const jobsRouter = require('./routes/jobRoute');
 
 // error handler middlewares
@@ -18,7 +22,7 @@ server.use(express.json());
 
 // home route
 server.get('/', (req,res) => {
-    res.send('Jobs api');
+    res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
 })
 
 // login & register routes
