@@ -7,10 +7,11 @@ const server = express();
 // connect DB
 const DBConnection = require('./db/connectDB');
 
-// auth related router
-const authRouter = require('./routes/authRoute');
+// authentication middleware import to protect user
+const authenticateUser = require('./middleware/authentication')
 
-// job related router
+// auth & job router imports
+const authRouter = require('./routes/authRoute');
 const jobsRouter = require('./routes/jobRoute');
 
 // error handler middlewares
@@ -29,7 +30,7 @@ server.get('/', (req,res) => {
 server.use('/api/v1/auth',authRouter);
 
 // jobsAPI route
-server.use('/api/v1/jobs',jobsRouter);
+server.use('/api/v1/jobs', authenticateUser, jobsRouter);
 
 server.use(notFoundMiddleware);
 server.use(errorHandlerMiddleware);
