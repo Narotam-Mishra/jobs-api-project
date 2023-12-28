@@ -1,6 +1,13 @@
 require('dotenv').config();
 require('express-async-errors');
 
+// extra security packages
+const helmet = require('helmet')
+const cors = require('cors')
+const xss = require('xss-clean')
+const rateLimiter = require('express-rate-limit')
+
+// express
 const express = require('express');
 const server = express();
 
@@ -18,8 +25,23 @@ const jobsRouter = require('./routes/jobRoute');
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
+// enable if your app behind a reverse proxy
+server.set('trust proxy', 1);
+
+// setup for rate limiter middleware
+server.use(rateLimiter({
+    windowMs: 15 * 60 * 1000,  // 15 minutes
+    max: 100              // limit each IP to 100 requests per windowMs
+}))
+
 // to use json data
 server.use(express.json());
+
+// middleware setup for additional packages
+server.use(helmet())
+server.use(cors())
+server.use(xss())
+
 
 // home route
 server.get('/', (req,res) => {
