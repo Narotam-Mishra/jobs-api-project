@@ -42,11 +42,19 @@ server.use(helmet())
 server.use(cors())
 server.use(xss())
 
+// Swagger UI setup
+const swaggerUI = require('swagger-ui-express')
+const yaml = require('yamljs')
+
+// const swaggerDocument = yaml.load('');
+
 
 // home route
 server.get('/', (req,res) => {
     res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
 })
+
+// server.use()
 
 // login & register routes
 server.use('/api/v1/auth',authRouter);
