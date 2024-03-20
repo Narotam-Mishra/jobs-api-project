@@ -49,6 +49,8 @@ server.use(helmet())
 server.use(cors())
 server.use(xss())
 
+server.use(express.static('./public'));
+
 // home route
 server.get('/', (req,res) => {
     res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
