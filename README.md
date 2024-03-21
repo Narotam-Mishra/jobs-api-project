@@ -3,10 +3,7 @@
 
 ### Setup
 
-`
-npm install && npm start
-
-`
+`npm install && npm start`
 
 ### Database Connection
 1. Import connectDB.js from db
@@ -21,11 +18,7 @@ npm install && npm start
 ### User Model
 - Email Validation Regex
 
-`
-
-/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-`
+`/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/`
 
 ### Register User
 
@@ -67,16 +60,13 @@ npm install && npm start
 
 ### [Swagger UI Documentation](https://job-api-temp.onrender.com/api-docs)
 
-`
-/jobs/{id}:
+`/jobs/{id}:
   parameters:
     - in: path
       name: id
       schema:
         type: string
       required: true
-      description: the job id
-
-`
+      description: the job id`
 
 ### Deployed on Render
