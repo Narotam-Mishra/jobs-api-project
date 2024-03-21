@@ -60,13 +60,15 @@
 
 ### [Swagger UI Documentation](https://job-api-temp.onrender.com/api-docs)
 
-`/jobs/{id}:
+`
+/jobs/{id}:
   parameters:
     - in: path
       name: id
       schema:
         type: string
       required: true
-      description: the job id`
+      description: the job id
+`
 
 ### Deployed on Render
