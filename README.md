@@ -61,6 +61,7 @@
 ### [Swagger UI Documentation](https://job-api-temp.onrender.com/api-docs)
 
 `
+
 /jobs/{id}:
   parameters:
     - in: path
@@ -69,6 +70,7 @@
         type: string
       required: true
       description: the job id
+
 `
 
 ### Deployed on Render
