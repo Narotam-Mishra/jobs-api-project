@@ -57,6 +57,7 @@
 - xss-clean --> to sanitize user input
 - express-rate-limit --> to limit request made from each IP address
 
+### Deployed on Render
 
 ### [Swagger UI Documentation](https://job-api-temp.onrender.com/api-docs)
 
@@ -69,4 +70,3 @@
       required: true
       description: the job id```
 
-### Deployed on Render
